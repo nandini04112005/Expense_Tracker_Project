@@ -20,6 +20,9 @@ public class ExpensesService {
     public Expenses createExpenses(Expenses expenses) {
         return repository.save(expenses);
     }
+    public Expenses getExpenseById(int id){
+        return repository.findById(id).orElse(null);
+    }
       public Expenses updateExpenses(int id, Expenses expenses) {
         expenses.setId(id);
         return repository.save(expenses);

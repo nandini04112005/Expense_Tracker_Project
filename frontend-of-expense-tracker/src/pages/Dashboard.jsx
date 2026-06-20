@@ -95,7 +95,7 @@ export default function Dashboard() {
                 <div className="welcome">
 
                     <h2>
-                        Welcome Back, {username}! 👋
+                        Welcome Back!
                     </h2>
 
                     <p>
@@ -185,6 +185,12 @@ export default function Dashboard() {
                         }
                     >
                         View All Expenses
+                    </button>
+                    <button
+                        className="add-btn"
+                        onClick={() => navigate("/statistics")}
+                    >
+                        Expense Statistics
                     </button>
 
                 </div>

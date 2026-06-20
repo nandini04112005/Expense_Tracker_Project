@@ -26,6 +26,10 @@ public class ExpensesController {
         // Sample data
         return service.getAllExpenses(); 
     }
+    @GetMapping("/expenses/{id}")
+    public Expenses getExpenseById(@PathVariable int id) {
+        return service.getExpenseById(id);
+    }
     @PostMapping("/expenses")
     public Expenses addExpenses(@RequestBody Expenses expenses) {
         return service.createExpenses(expenses);

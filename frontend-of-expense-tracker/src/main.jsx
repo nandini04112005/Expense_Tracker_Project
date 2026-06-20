@@ -10,6 +10,7 @@ import AddExpense from './pages/AddExpense.jsx'
 import ViewExpenses from './pages/ViewExpenses';
 import EditExpense from './pages/EditExpense.jsx'
 import Protected from './components/Protected';
+import Statistics from './pages/Statistics.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -19,6 +20,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
          <Route path="/dashboard" element={<Protected> <Dashboard /> </Protected>}/>
+         <Route path="/statistics" element={<Protected><Statistics /></Protected>} />
          <Route path="/addExpense" element={<Protected><AddExpense /></Protected>} />
          <Route path="/viewExpenses" element={<Protected><ViewExpenses /></Protected>} />
          <Route path="/editExpense/:id" element={<Protected><EditExpense /></Protected>} />

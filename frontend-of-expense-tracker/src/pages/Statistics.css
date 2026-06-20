@@ -1,0 +1,11 @@
+.stats-main{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:50px;
+}
+
+.stats-nav{
+    text-align:center;
+    padding:20px;
+}
