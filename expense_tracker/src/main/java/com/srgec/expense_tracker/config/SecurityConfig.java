@@ -3,6 +3,7 @@ package com.srgec.expense_tracker.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -26,7 +27,9 @@ public class SecurityConfig {
                 .headers(headers -> headers.frameOptions(
                         frame -> frame.disable()))
                 .authorizeHttpRequests(
-                        auth -> auth.requestMatchers("/login", "/register","/h2-console/**").permitAll().anyRequest().authenticated())
+                        auth -> auth
+                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                        .requestMatchers("/login", "/register","/h2-console/**").permitAll().anyRequest().authenticated())
                 .addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
 
