@@ -29,6 +29,7 @@ body{
     border-radius:10px;
     cursor:pointer;
     font-size:16px;
+    
 }
 
 .dashboard-nav button:hover{
@@ -138,13 +139,18 @@ body{
     cursor:pointer;
     font-size:16px;
    
+   
 }
 
 
 .add-btn:hover{
     background:#1d4ed8;
 }
-
+.dashboard-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 /* Footer */
 
 .dashboard-footer{
